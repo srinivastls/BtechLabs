@@ -1,0 +1,109 @@
+#include<iostream>
+using namespace std;
+#define size 5
+
+class Stack
+{
+	int array[size];
+	int top;
+	public :
+    	
+	Stack()			// Constructor
+	{
+		top=-1;
+	}
+	bool isempty()
+	{
+		if(top==-1)
+			return true;
+		else
+			return false;
+	}
+	bool isfull()
+	{
+		if(top==size-1)
+			return true;
+		else
+			return false;
+	}	
+	void push(int ele)
+	{
+		if(isfull())
+			cout << "Stack Overflow" << endl;
+		else
+		{
+			top++;
+			array[top]=ele;
+		}
+	}
+	void pop()
+	{
+		if(isempty())
+			cout << "Stack Underflow" << endl;
+		else
+		{
+			top--;
+		}
+	}
+	void display()
+	{
+		cout << "ID'S in the Stack : " << endl;
+		for(int i=top;i>=0;i--)
+			cout << array[i] << " ";
+		cout << endl;
+	}
+	void peek()
+	{
+		cout << "Top Most ID : " << array[top] << endl;
+	}
+	void digittotext()
+	{
+		for(int i=top;i>=0;i--)
+		{
+			if(array[i]==1)
+				cout << "One ";
+			if(array[i]==2)
+				cout << "Two ";
+			if(array[i]==3)
+				cout << "Three ";
+			if(array[i]==4)
+				cout << "Four ";
+			if(array[i]==5)
+				cout << "Five ";
+			if(array[i]==6)
+				cout << "Six ";
+			if(array[i]==7)
+				cout << "Seven ";
+			if(array[i]==8)
+				cout << "Eight ";
+			if(array[i]==9)
+				cout << "Nine ";
+			if(array[i]==0)
+				cout << "Zero ";
+		}
+	}
+	void reverse()
+	{
+		cout << "Reverse Order : " << endl;
+		for(int i=0;i<=top;i++)
+			cout << array[i];
+	}
+	void palindrome()
+	{
+		int i=0,j=top;
+		while(i<top)
+		{
+			if(array[i]==array[j])
+			{
+				i++;
+				j--;
+			}
+			else
+				break;
+		}
+		if(i==top)
+			cout << "Given number is a palindrome" << endl;
+		else
+			cout << "Given number is not a Palindrome" << endl;
+	}
+};
