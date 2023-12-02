@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bokeh Effect Web App</title>
+</head>
+<body>
+    <h1>Bokeh Effect Web App</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="file" name="image">
+        <button type="submit">Upload Image</button>
+    </form>
+
+    <div id="image-display">
+        <img src="{{ image_url }}" alt="Bokeh Effect Image">
+    </div>
+
+    {% if bokeh_applied %}
+    <h2>Bokeh Effect Applied</h2>
+    <a href="{{ download_url }}" download="bokeh_image.jpg">Download Bokeh Image</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Chat</title>
+    <!-- Add any necessary CSS styles or links here -->
+</head>
+<body>
+    <div>
+        <canvas id="canvas1" width="500" height="480"></canvas>
+        <canvas id="canvas2" width="500" height="480"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+        // Add any necessary JavaScript for handling video chat here
+
+        // For example, you can emit events to the server like this:
+        // socket.emit('my_event', {data: 'data'});
+    </script>
+</body>
+</html>
